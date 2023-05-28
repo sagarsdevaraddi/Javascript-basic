@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 113);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            column-gap: 5px;
+           
+            
+        }
+        label{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        input{
+            border: 1px solid gold;
+            height: 25px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            box-shadow: 3px 3px 8px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Temperature unit converter</h2>
+
+</center>
+    <div class="container">
+
+        <!-- Temperature conversion -->
+        <input type="number" id="value1">
+        <label for="value1">Celcius</label>
+       
+        <input type="number" id="value2">
+        <label for="value2">fahrenheit</label>
+      
+        <input type="number" id="value3">
+        <label for="value3">kelvin</label>
+
+
+        <!-- weight conversion -->
+        <!-- code here -->
+    </div>
+
+    <script>
+
+
+const cel = document.getElementById("value1")
+const farh = document.getElementById("value2")
+const kel = document.getElementById("value3")
+
+cel.addEventListener("input",function(){
+    let celc = this.value
+    farh.value = (celc*(9/5)+32)
+})
+cel.addEventListener("input",function(){
+    let celc = this.value
+    kel.value = 273.15 + parseFloat(celc)
+}
+    )
+
+farh.addEventListener("input",function(){
+    let far = this.value
+    cel.value = (far-32)*(5/9)
+})
+farh.addEventListener("input",function(){
+    let far = this.value
+    kel.value = parseFloat((far-32)*(5/9)) + 273.15
+    
+})
+kel.addEventListener("input",function(){
+    let kell = this.value
+    cel.value = (kell) - 273.15
+})
+
+kel.addEventListener("input",function(){
+    let kell = this.value
+   farh.value = ((kell) - 273.15)*(9/5)+32
+})
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

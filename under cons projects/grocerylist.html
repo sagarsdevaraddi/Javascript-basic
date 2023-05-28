@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: khaki;
+  }
+  input{
+    border-radius: 5px;
+    border: none;
+    background-color:  khaki;
+    border-bottom: 2px solid black;
+  }
+  center{
+    display: block;
+    
+  }
+  .line{
+    text-decoration: line-through;
+  }
+  .italic{
+    font-style: italic;
+  }
+ 
+    </style>
+</head>
+<body>
+    <div class="container-cl">
+        <div class="groceries-cl">
+           <center>
+            <h1><em>Grocery List</em></h1>
+           🖋<input placeholder="Enter item to add" type="text" id="userinput-id"> <button onclick="remove()" type="reset">reset</button>
+              
+
+          
+        </center>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        
+        const display = document.querySelector("center")
+        
+        
+        function remove(){
+            display.innerHTML = `<h1><em>Grocery List</em></h1>
+           🖋<input placeholder="Enter item to add" type="text" id="userinput-id">  <button onclick="remove()" type="reset">reset</button>`
+
+        }
+        
+        addEventListener("keypress",  function(event){
+            if(event.key == "Enter"){
+
+                const groceryItem = document.querySelector("input")
+                
+                display.innerHTML += `<h3><input type="checkbox" name="" id="">${groceryItem.value}</h3>`
+                
+                
+            }
+              
+              
+            })
+           
+             
+
+          
+
+
+    </script>
+</body>
+</html>

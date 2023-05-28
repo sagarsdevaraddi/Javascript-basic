@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick exp in input</title>
+    <link rel="stylesheet" href="calc.css">
+    
+    
+</head>
+<body>
+    <h1>Simple calculator</h1>
+<div class="calculator">
+    <input  type="text" id="input" placeholder="Display">
+
+    <div class="buttonss">
+        <button onclick="clearinput()" id="C">C</button>
+        <button onclick="backspace()">CE</button>
+        <button onclick="addtoinput('/')" class="operator">/</button>
+        <button onclick="addtoinput('*')" class="operator">x</button>
+        <button onclick="addtoinput('7')">7</button>
+        <button onclick="addtoinput('8')">8</button>
+        <button onclick="addtoinput('9')">9</button>
+        <button onclick="addtoinput('-')" class="operator">-</button>
+        <button onclick="addtoinput('4')">4</button>
+        <button onclick="addtoinput('5')">5</button>
+        <button onclick="addtoinput('6')">6</button>
+        <button onclick="addtoinput('+')" class="opearator">+</button>
+        <button onclick="addtoinput('1')">1</button>
+        <button onclick="addtoinput('2')">2</button>
+        <button onclick="addtoinput('3')">3</button>
+        <button onclick="calculate()" id="equals">=</button>
+        <button onclick="addtoinput('0')">0</button>
+        <button onclick="addtoinput('.')">.</button>
+    </div>
+</div>
+<script src="/calcu.js"></script>
+    
+   
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    background-color: bisque;
+  }
+  .container{
+    position: absolute;
+   top: 100px;
+    width: 200px;
+    padding: 100px;
+    left: 500px;
+    border-radius: 500px;
+    color: antiquewhite;
+    
+    background:radial-gradient(gold,orange,red)
+
+  }
+  button{
+    
+    margin: 4px;
+    background-color: goldenrod;
+    border-radius: 5px;
+    color: rgb(231, 231, 231);
+  }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>STOPWATCH</h1>
+    <center><h2>00:00</h2></center>
+   <button onclick="startl()">START</button><button onclick="stop()">STOP</button><button onclick="reset()">RESET</button>
+  </div>
+    <script>
+     
+       
+     const display = document.querySelector("h2")
+function startl(){
+  clear = setInterval(() => {
+    start()
+  
+  }, 100);
+  
+}    
+
+
+let count =  0
+let second =  0 
+function start(){
+  count++
+  if(count <= 9){
+    display.innerHTML = "0"+second+":0"+count
+    }
+  else if(count > 9 && count<=59){
+    display.innerHTML = "0"+second+":"+count
+    }
+  else if(count > 59){
+      second = second+1
+      count = 0 
+      display.innerHTML = "0"+second+":"+count
+    }
+     if(second > 9){
+      display.innerHTML = second+":"+count
+    }
+
+    // display.innerHTML = "0"+second+":0"+count
+    
+    
+    
+    }
+
+     function stop(){
+     
+      clearInterval(clear)
+      if(count <= 9){
+    display.innerHTML = "0"+second+":0"+count
+    }
+  else if(count > 9 && count<=59){
+    display.innerHTML = "0"+second+":"+count
+    }
+  else if(count > 59){
+      second = second+1
+      count = 0 
+      display.innerHTML = "0"+second+":"+count
+    }
+    if(second > 9){
+      display.innerHTML = second+":"+count
+    }
+      
+    }
+    function reset(){
+       second = 0
+       count = 0
+       
+       display.innerHTML = "00:00"
+       
+     }
+     
+     
+
+
+    </script>
+</body>
+</html>
